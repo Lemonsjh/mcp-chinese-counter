@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-chinese-counter"
+version = "0.1.0"
+description = "中文字数统计 MCP 服务"
+requires-python = ">=3.10"
+dependencies = ["mcp[server]>=1.0.0"]
