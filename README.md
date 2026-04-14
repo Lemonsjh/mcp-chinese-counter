@@ -1,36 +1,42 @@
 # 中文字数统计 MCP 服务
 
-## 功能说明
+一个轻量的 MCP 服务，提供中文字符统计功能。
 
-提供中文字符统计能力，纯 Python 实现，部署轻量。
+## 功能
 
-### 工具列表
+提供两个工具：
 
-#### count_chinese_chars
-统计文本中的纯中文字符数量（不含标点、英文、数字、空格）。
+| 工具名 | 说明 |
+|--------|------|
+| `count_chinese_chars` | 统计文本中的纯中文字符数（不含标点、英文、数字、空格） |
+| `count_chinese_chars_detail` | 详细统计，返回各类型字符的分类计数 |
 
-- 输入参数：`text` (string)
-- 返回：整数
-
-#### count_chinese_chars_detail
-返回字符详细分类统计。
-
-- 输入参数：`text` (string)
-- 返回：JSON 对象
-
-## 环境要求
-
-- Python 3.10+
-
-## 依赖
-
-```
-mcp[server]>=1.0.0
-```
-
-## 本地运行
+## 安装
 
 ```bash
 pip install -r requirements.txt
+```
+
+## 运行
+
+```bash
 python server.py
 ```
+
+## 使用示例
+
+调用 `count_chinese_chars`，输入：
+```
+今天天气不错，适合出门散步。
+```
+
+输出：
+```
+10
+```
+
+## 技术栈
+
+- Python 3.10+
+- MCP Python SDK (`mcp[server]`)
+- 传输模式：SSE (Server-Sent Events)
